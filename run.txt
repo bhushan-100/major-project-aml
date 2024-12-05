@@ -1,0 +1,18 @@
+python main.py --data Small_HI --model gin --tqdm --save_model --load_ckpt --unique_name gin
+python main.py --data Small_HI --model pna --tqdm --save_model --load_ckpt --unique_name pna1
+
+python main.py --data Small_HI --model gin --tqdm --emlps --reverse_mp --ego --ports --save_model --load_ckpt --unique_name multi_gin
+python main.py --data Small_HI --model pna --tqdm --emlps --reverse_mp --ego --ports --save_model --load_ckpt --unique_name multi_pna
+python main.py --data Small_HI --model pna --tqdm --emlps --reverse_mp --ego --ports --save_model --load_ckpt --unique_name multi_pna --batch_size 8192
+
+python main.py --data Small_HI --model pna --tqdm --batch_size 8192 --inference --load_ckpt --unique_name pna1 
+python main.py --data Small_HI --model pna --tqdm --emlps --reverse_mp --ego --ports --inference  --load_ckpt --unique_name multi_pna
+
+
+# multi_pna with 1024 batch_size
+python main.py --data Small_HI --model pna --tqdm --emlps --reverse_mp --ego --ports --save_model --load_ckpt --unique_name multi_pna1 --batch_size 1024
+python main.py --data Small_HI --model pna --tqdm --emlps --reverse_mp --ego --ports --inference  --load_ckpt --unique_name multi_pna1 --batch_size 1024
+
+python main.py --data Small_LI --model pna --tqdm --emlps --reverse_mp --ego --ports --save_model --load_ckpt --unique_name multi_pna_small_li --batch_size 1024
+
+streamlit run app3.py
